@@ -1,17 +1,31 @@
-package dev.java10x.CadastroDeNinjas.Model;
+package dev.java10x.CadastroDeNinjas.Ninjas.Model;
 
+import dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
 import jakarta.persistence.*;
 
-@Entity
+import java.util.List;
+
+@Entity // transformanda a classe em um entidade de Database
 @Table(name = "tb_cadastro") // nomeando a tabela do Database
 public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     private Integer age;
+
     private String email;
+
+    /*
+    * @ManyToOne -> um ninja para uma missão
+    *       @JoinColumn -> name = coluna_relacionando-as_com_uma_Foreing_Key
+    */
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    private MissoesModel missoes;
 
     public NinjaModel(){}
 
