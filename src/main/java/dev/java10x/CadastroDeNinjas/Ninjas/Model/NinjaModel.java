@@ -31,6 +31,7 @@ public class NinjaModel {
 
     private Integer age;
 
+    @Column(unique = true)
     private String email;
 
     /*
