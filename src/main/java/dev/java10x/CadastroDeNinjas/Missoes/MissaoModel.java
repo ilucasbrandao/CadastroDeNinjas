@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeNinjas.Missoes.Model;
+package dev.java10x.CadastroDeNinjas.Missoes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.CadastroDeNinjas.Ninjas.Model.NinjaModel;
