@@ -1,12 +1,10 @@
 package dev.java10x.CadastroDeNinjas.Ninjas.Model;
 
-import dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
+import dev.java10x.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Entity // transformanda a classe em um entidade de Database
 @Table(name = "tb_cadastro") // nomeando a tabela do Database
@@ -42,5 +40,5 @@ public class NinjaModel {
      */
     @ManyToOne
     @JoinColumn(name = "missoes_id")  // Foreing Key
-    private MissoesModel missoes;
+    private MissaoModel missoes;
 }
