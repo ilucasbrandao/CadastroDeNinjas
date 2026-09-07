@@ -25,4 +25,14 @@ public class MissoesService {
     public Optional<MissaoModel> findById(Long id){
         return repository.findById(id);
     }
+
+    public MissaoModel updade(Long id, MissaoModel missaoAtualizada){
+        Optional<MissaoModel> missaoEncontrada = repository.findById(id);
+        missaoEncontrada.map(missao -> {
+            missao.setNome(missaoAtualizada.getNome());
+            missao.setDificuldade(missaoAtualizada.getDificuldade());
+            return repository.save(missao);
+        });
+        return null;
+    }
 }

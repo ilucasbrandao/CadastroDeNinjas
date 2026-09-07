@@ -1,11 +1,7 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +15,11 @@ public class MissoesController {
         this.service = service;
     }
 
+    @PostMapping("/criar")
+    public MissaoModel create(@RequestBody MissaoModel missao){
+        return service.create(missao);
+    }
+
     @GetMapping("/listar")
     public List<MissaoModel> findAll(){
         return service.findAll();
@@ -29,4 +30,8 @@ public class MissoesController {
         return service.findById(id);
     }
 
+    @PutMapping("/atualizar/{id}")
+    public MissaoModel update(@PathVariable Long id, @RequestBody MissaoModel missaoAtualizada){
+        return service.updade(id, missaoAtualizada);
+    }
 }
