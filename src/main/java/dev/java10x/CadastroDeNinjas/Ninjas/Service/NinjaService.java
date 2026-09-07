@@ -28,4 +28,19 @@ public class NinjaService {
         return repository.findById(id);
     }
 
+    public NinjaModel update(Long id, NinjaModel ninjaAtualizado) {
+        Optional<NinjaModel> ninjaEncontrado = repository.findById(id);
+        ninjaEncontrado.map( ninja -> {
+            ninja.setName(ninjaAtualizado.getName());
+            ninja.setAge(ninjaAtualizado.getAge());
+            ninja.setEmail(ninjaAtualizado.getEmail());
+            return repository.save(ninja);
+        });
+        return null;
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
 }
