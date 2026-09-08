@@ -35,4 +35,8 @@ public class MissoesService {
         });
         return null;
     }
+
+    public void delete(Long id){
+        repository.deleteById(id);
+    }
 }
