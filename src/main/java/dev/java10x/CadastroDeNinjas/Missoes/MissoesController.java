@@ -34,4 +34,9 @@ public class MissoesController {
     public MissaoModel update(@PathVariable Long id, @RequestBody MissaoModel missaoAtualizada){
         return service.updade(id, missaoAtualizada);
     }
+
+    @DeleteMapping("/deletar/{id}")
+    public void delete(@PathVariable Long id){
+        service.delete(id);
+    }
 }

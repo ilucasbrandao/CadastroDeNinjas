@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeNinjas.Ninjas.Model;
+package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import dev.java10x.CadastroDeNinjas.Missoes.MissaoModel;
 import jakarta.persistence.*;
@@ -33,6 +33,9 @@ public class NinjaModel {
 
     @Column(unique = true)
     private String email;
+
+    @Column(name = "rank")
+    private String rank;
 
     /*
      * @ManyToOne -> um ninja para uma missão
