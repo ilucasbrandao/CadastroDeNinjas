@@ -16,23 +16,23 @@ public class MissoesController {
     }
 
     @PostMapping("/criar")
-    public MissaoModel create(@RequestBody MissaoModel missao){
+    public MissoesDTO create(@RequestBody MissoesDTO missao){
         return service.create(missao);
     }
 
     @GetMapping("/listar")
-    public List<MissaoModel> findAll(){
+    public List<MissoesDTO> findAll(){
         return service.findAll();
     }
 
     @GetMapping("/listar/{id}")
-    public Optional<MissaoModel> findById(@PathVariable Long id){
+    public Optional<MissoesDTO> findById(@PathVariable Long id){
         return service.findById(id);
     }
 
     @PutMapping("/atualizar/{id}")
-    public MissaoModel update(@PathVariable Long id, @RequestBody MissaoModel missaoAtualizada){
-        return service.updade(id, missaoAtualizada);
+    public MissoesDTO update(@PathVariable Long id, @RequestBody MissoesDTO missaoAtualizada){
+        return service.update(id, missaoAtualizada);
     }
 
     @DeleteMapping("/deletar/{id}")
